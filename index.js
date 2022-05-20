@@ -49,6 +49,7 @@ Person.prototype.eat = function(edible){
     this.stomach.push(edible);
   }
 }
+
 Person.prototype.poop = function(){
   this.stomach = [];
 }
@@ -81,11 +82,15 @@ function Car(model, mpg) {
   this.model = model
   this.milesPerGallon = mpg;
   this.tank = 0;
-  this.odometer = 0;
+  this.odometer = 0; 
 }
+
+
 Car.prototype.fill = function(gallons){
   this.tank = this.tank + gallons;
 }
+
+
 Car.prototype.drive = function(dist){
   const driveableMiles = this.milesPerGallons;
   if(dist <= driveableMiles){
@@ -111,6 +116,7 @@ function Baby(name, age, favoriteToy) {
   this.favoriteToy = favoriteToy;
 }
 Baby.prototype = Object.create(Person.prototype);
+
 Baby.prototype.play = function(){
   return `Playing with ${this.favoriteToy}`;
 }
